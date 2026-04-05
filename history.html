@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concerta History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo"> <img src="images/icon.png" alt="logo-concerta"></div>
+    <nav>
+      <a href="home-page.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="about-us.html">About Us</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="sign-in.html" class="btn-outline">Log Out</a>
+    </div>
+  </header>
+
+  <main class="home-page">
+    <section class="history-main">
+      <div class="history-header">
+        <div class="history-title">
+          <h1>Your Order History</h1>
+          <div class="history-line"></div>
+        </div>
+
+        <div class="history-search">
+          <input type="search" placeholder="Search history (Event name/Order ID)">
+        </div>
+      </div>
+
+      <div class="history-card">
+        <div class="history-table-head">
+          <div>Order ID</div>
+          <div>Event Name</div>
+          <div>Date</div>
+          <div>Number of Ticket</div>
+          <div>Total Price</div>
+          <div>Status</div>
+        </div>
+
+        <div class="history-table-row">
+          <div>12345678910</div>
+          <div class="event-cell">
+            <div class="event-thumb">
+              <img src="images/main-pict-dashboard.png" alt="Soft World Tour">
+            </div>
+            <div>
+              <div class="event-name">SOFT WORLD TOUR</div>
+            </div>
+          </div>
+          <div>7 April 2026</div>
+          <div>3</div>
+          <div>Rp5.000.000</div>
+          <div><span class="status-pill done">DONE</span></div>
+        </div>
+
+        <div class="history-table-row">
+          <div>12345678910</div>
+          <div class="event-cell">
+            <div class="event-thumb">
+              <img src="images/main-pict-dashboard.png" alt="Soft World Tour">
+            </div>
+            <div>
+              <div class="event-name">SOFT WORLD TOUR</div>
+            </div>
+          </div>
+          <div>5 April 2026</div>
+          <div>3</div>
+          <div>Rp5.000.000</div>
+          <div><span class="status-pill pending">PENDING</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Copyrights © Concerta. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
