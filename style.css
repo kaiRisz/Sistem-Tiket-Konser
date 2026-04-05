@@ -19,6 +19,7 @@ main {
   flex: 1;
 }
 
+
 /* NAVBAR */
 .navbar {
   display: flex;
@@ -74,10 +75,40 @@ main {
   box-shadow: 0 12px 30px rgba(91, 74, 255, 0.24);
 }
 
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-center a {
+
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar-center a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 60px rgba(91, 74, 255, 0.32);
+}
+
 .auth-buttons {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.detail-back {
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.detail-back .signin-btn {
+  width: auto;
+  min-width: 180px;
+  padding: 14px 34px;
 }
 
 .auth-buttons a {
@@ -111,6 +142,8 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.btn-primary:hover,
+.btn-outline:hover,
 .auth-buttons a:hover,
 .auth-buttons a.active {
   transform: translateY(-1px);
@@ -562,6 +595,404 @@ main {
 
 .concert-card.sold-out .concert-content {
   position: relative;
+}
+
+.detail-main {
+  padding: 12px 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.detail-heading {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 4px;
+}
+
+.detail-heading .eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #b1b1ff;
+}
+
+.detail-heading h1 {
+  font-size: clamp(1.3rem, 1.8vw, 1.75rem);
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.detail-heading p {
+  color: #d9d9ff;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detail-card {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(18, 8, 62, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  min-height: 360px;
+}
+
+.detail-card-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.detail-card-tabs .detail-switch-btn {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.detail-card-tabs .detail-switch-btn.active,
+.detail-card-tabs .detail-switch-btn:hover {
+  background: linear-gradient(135deg, #5B4AFF 0%, #2D17CA 100%);
+  border-color: transparent;
+  box-shadow: 0 14px 34px rgba(91, 74, 255, 0.22);
+  transform: scale(1.02);
+}
+
+.detail-card-inner {
+  display: none;
+  padding: 14px;
+}
+
+.detail-view-active {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.detail-card-inner:not(.detail-view-active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.detail-card-inner.detail-view-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.order-summary-header h2 {
+  font-size: clamp(1.7rem, 1.9vw, 2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.order-summary-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.order-summary-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.order-summary-item span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.order-summary-item strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.order-summary-item small {
+  display: block;
+  margin-top: 4px;
+  color: #c8c8ff;
+  font-size: 0.88rem;
+}
+
+.order-summary-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 104px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.qty-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qty-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.qty-value {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.detail-price-order {
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.detail-total {
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.98rem;
+}
+
+.detail-total strong {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.detail-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.detail-actions .btn-primary,
+.detail-actions .search-button {
+  min-width: 180px;
+}
+
+.detail-card-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  position: relative;
+}
+
+.detail-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.ticket-type-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ticket-type-pill {
+  min-width: 92px;
+  text-align: center;
+}
+
+.detail-card-left,
+.detail-card-right {
+  min-height: auto;
+}
+
+.detail-card-left {
+  overflow: hidden;
+}
+
+.detail-card-left img {
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  object-fit: cover;
+}
+
+.detail-card-right {
+  flex: 1;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.detail-line {
+  width: 72px;
+  height: 2px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.detail-meta div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #d9d9ff;
+}
+
+.detail-meta strong {
+  color: #fff;
+}
+
+.detail-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 102px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #d9d9ff;
+  font-weight: 700;
+}
+
+.badge-active {
+  background: linear-gradient(135deg, #5B4AFF 0%, #2D17CA 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.detail-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #d9d9ff;
+}
+
+.detail-price span {
+  color: #c8c8ff;
+}
+
+.detail-price strong {
+  font-size: 1.4rem;
+}
+
+.detail-total strong {
+  font-size: 1.4rem;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detail-actions .search-button {
+  min-width: 160px;
+}
+
+@media (max-width: 1024px) {
+  .detail-card {
+    flex-direction: column;
+  }
+
+  .detail-card-right {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-main {
+    padding: 24px 20px 40px;
+  }
+
+  .detail-card-right {
+    padding: 28px;
+  }
+
+  .detail-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 540px) {
+  .detail-switch-panel {
+    gap: 12px;
+  }
+
+  .detail-switch-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1024px) {

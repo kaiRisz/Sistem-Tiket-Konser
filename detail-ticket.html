@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concerta Ticket Detail</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo"> <img src="images/icon.png" alt="logo-concerta"></div>
+    <nav class="navbar-center">
+      <a href="detail-order.html" class="btn-primary">MY ORDER</a>
+    </nav>
+  </header>
+
+  <main class="detail-main">
+    <section class="detail-heading">
+      <p class="eyebrow">Ticket Detail</p>
+      <h1>Choose your ticket and find the best seat</h1>
+      <p>Switch between VIP and Regular for full ticket information, pricing, and availability.</p>
+    </section>
+
+    <section class="detail-card detail-card-active" id="ticket-card">
+      <div class="detail-card-tabs">
+        <button class="detail-switch-btn active" data-target="vip-card">VIP</button>
+        <button class="detail-switch-btn" data-target="regular-card">Regular</button>
+      </div>
+
+      <div class="detail-card-inner detail-view-active" id="vip-card">
+        <div class="detail-card-left">
+          <img src="images/main-pict-dashboard.png" alt="Soft World Tour VIP">
+        </div>
+        <div class="detail-card-right">
+          <div class="detail-card-top">
+            <span class="eyebrow">Soft World Tour</span>
+            <span class="ticket-type-pill">VIP</span>
+          </div>
+          <h2>VIP Ticket</h2>
+          <div class="detail-line"></div>
+
+          <div class="detail-meta">
+            <div><strong>Artist</strong><span>LANY</span></div>
+            <div><strong>Date</strong><span>30 October 2026</span></div>
+            <div><strong>Venue</strong><span>Jakarta, Indonesia Arena</span></div>
+            <div><strong>Seats</strong><span>Front Row | Premium Lounge</span></div>
+          </div>
+
+          <div class="detail-price">
+            <span>Total Price</span>
+            <strong>Rp 2.500.000</strong>
+          </div>
+
+          <div class="detail-actions">
+            <a href="detail-order.html" class="search-button">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-card-inner" id="regular-card">
+        <div class="detail-card-left">
+          <img src="images/main-pict-dashboard.png" alt="Soft World Tour Regular">
+        </div>
+        <div class="detail-card-right">
+          <div class="detail-card-top">
+            <span class="eyebrow">Soft World Tour</span>
+            <span class="ticket-type-pill">Regular</span>
+          </div>
+          <h2>Regular Ticket</h2>
+          <div class="detail-line"></div>
+
+          <div class="detail-meta">
+            <div><strong>Artist</strong><span>LANY</span></div>
+            <div><strong>Date</strong><span>30 October 2026</span></div>
+            <div><strong>Venue</strong><span>Jakarta, Indonesia Arena</span></div>
+            <div><strong>Seats</strong><span>Standard Floor | General Admission</span></div>
+          </div>
+
+          <div class="detail-price">
+            <span>Total Price</span>
+            <strong>Rp 1.500.000</strong>
+          </div>
+
+          <div class="detail-actions">
+            <a href="detail-order.html" class="signin-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="detail-actions">
+      <a href="" class="signin-btn">Back</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Copyrights © Concerta. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const switchButtons = document.querySelectorAll('.detail-switch-btn');
+    const views = document.querySelectorAll('.detail-card-inner');
+
+    switchButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+
+        switchButtons.forEach(item => item.classList.remove('active'));
+        views.forEach(view => view.classList.remove('detail-view-active'));
+
+        btn.classList.add('active');
+        document.getElementById(target).classList.add('detail-view-active');
+      });
+    });
+  </script>
+
+</body>
+</html>
